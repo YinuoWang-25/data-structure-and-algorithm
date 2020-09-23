@@ -1,7 +1,11 @@
-package todo;
+// 377. Combination Sum IV
+/*
+    V.S. 518. Coin Change 2
 
-public class CombinationSumIV {
-    // 377. Combination Sum IV
+    pay attention to order
+ */
+
+public class L377_CombinationSumIV {
     public int combinationSum4(int[] nums, int target) {
         int[] dp = new int[target + 1];
         dp[0] = 1;

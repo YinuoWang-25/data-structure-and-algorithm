@@ -13,7 +13,7 @@ public class L322_CoinChange {
                 dp[coin] = 1;
             }
         }
-        for (int i = 1; i < dp.length; i++) {
+        for (int i = 1; i <= amount; i++) {
             for (int coin : coins) {
                 if (i > coin && dp[i - coin] != Integer.MAX_VALUE) {
                     dp[i] = Math.min(dp[i], dp[i - coin] + 1);

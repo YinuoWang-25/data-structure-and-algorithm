@@ -569,6 +569,7 @@
 * [987. Vertical Order Traversal of a Binary Tree]()
 * [989. Add to Array-Form of Integer]()
 * [1007. Minimum Domino Rotations For Equal Row]()
+* [1008. Construct Binary Search Tree from Preorder Traversal]()
 * [1011. Capacity To Ship Packages Within D Days]()
 * [1020. Number of Enclaves]()
 * [1025. Divisor Game]()
