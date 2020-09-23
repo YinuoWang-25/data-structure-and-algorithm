@@ -1,5 +1,13 @@
 // 833. Find And Replace in String
 
+/*
+1. build a map to record all start point need to be replaced
+
+2. Scan String S from left to right.
+ case 1: no need to replace, we can just append the char
+ case 1: need to replace. We can append target[i] and update index
+ */
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
