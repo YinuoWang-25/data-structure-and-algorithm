@@ -581,6 +581,7 @@
 * [1056. Confusing Number]()
 * [1057. Campus Bikes]()
 * [1060. Missing Element in Sorted Array]()
+* [1066. Campus Bikes II]()
 * [1087. Brace Expansion]()
 * [1088. Confusing Number II]()
 * [1110. Delete Nodes And Return Forest]()
