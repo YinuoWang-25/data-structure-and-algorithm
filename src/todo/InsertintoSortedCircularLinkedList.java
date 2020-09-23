@@ -1,7 +1,7 @@
 package todo;
+// 708. Insert into a Sorted Circular Linked List
 
-public class InsertintoSortedCircularLinkedList {
-    // 708. Insert into a Sorted Circular Linked List
+public class InsertinSortedLinkedList {
     public Node insert(Node start, int x) {
         if (start == null) {
             Node node = new Node(x);

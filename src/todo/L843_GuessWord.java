@@ -1,12 +1,12 @@
 package todo;
+// 843. Guess the Word
 
 import java.util.*;
 
 interface  Master {
     public int guess(String s);
 }
-public class GuessWord {
-    // 843. Guess the Word
+public class L843_GuessWord {
     public void findSecretWord(String[] wordlist, Master master) {
         for (int times = 0, match = 0; times < 10 && match < 6; times++) {
 
