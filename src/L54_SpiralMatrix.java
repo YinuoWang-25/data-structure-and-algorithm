@@ -1,7 +1,9 @@
-package todo;
+// 54. Spiral Matrix
 
-public class SpiralMatrix {
-    // 54. Spiral Matrix
+import java.util.ArrayList;
+import java.util.List;
+
+public class L54_SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> result = new ArrayList<>();
         if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {

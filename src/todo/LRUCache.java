@@ -1,7 +1,9 @@
 package todo;
+// 146. LRU Cache
 
-public class LRUCache {
-    // 146. LRU Cache
+import java.util.Map;
+
+public class L146_LRUCache {
     class Node<K,V> {
         Node<Integer,Integer> next;
         Node<Integer,Integer> prev;
