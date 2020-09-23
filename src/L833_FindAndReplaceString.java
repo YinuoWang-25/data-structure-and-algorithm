@@ -33,7 +33,6 @@ public class L833_FindAndReplaceString {
         return sb.toString();
     }
 
-
     /**
      * Straightforward but slow
      */

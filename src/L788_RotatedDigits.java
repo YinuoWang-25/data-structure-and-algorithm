@@ -10,7 +10,9 @@ import java.util.Map;
  */
 public class L788_RotatedDigits {
 
-    /** DP solution [the one is most fast] */
+    /**
+     * DP solution [the one is most fast]
+     */
     public int rotatedDigitsI(int N) {
         int[] dp = new int[N + 1];
         int count = 0;
@@ -34,7 +36,9 @@ public class L788_RotatedDigits {
     }
 
 
-    /** basic solution */
+    /**
+     * basic solution
+     */
     public int rotatedDigitsII(int N) {
         int res = 0;
         Map<Character, Character> map = new HashMap<>();
@@ -46,13 +50,14 @@ public class L788_RotatedDigits {
         map.put('6', '9');
         map.put('9', '6');
 
-        for (int i = 1; i<= N; i++) {
+        for (int i = 1; i <= N; i++) {
             if (isValid(i, map)) {
                 res++;
             }
         }
         return res;
     }
+
     private boolean isValid(int num, Map<Character, Character> map) {
         char[] chs = Integer.toString(num).toCharArray();
         for (int i = 0; i < chs.length; i++) {
