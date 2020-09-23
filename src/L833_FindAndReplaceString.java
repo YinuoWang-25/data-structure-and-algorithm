@@ -15,18 +15,19 @@ import java.util.Map;
 
 public class L833_FindAndReplaceString {
     public String findReplaceString(String S, int[] indexes, String[] sources, String[] targets) {
-        Map<Integer, Integer> table = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < indexes.length; i++) {
-            if (S.startsWith(sources[i], indexes[i])) table.put(indexes[i], i);
+            if (S.startsWith(sources[i], indexes[i])) {
+                map.put(indexes[i], i);
+            }
         }
         StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < S.length(); ) {
-            if (table.containsKey(i)) {
-                sb.append(targets[table.get(i)]);
-                i += sources[table.get(i)].length();
+        for (int i = 0; i < S.length(); i++) {
+            if (map.containsKey(i)) {
+                sb.append(targets[map.get(i)]);
+                i += sources[map.get(i)].length() - 1;
             } else {
                 sb.append(S.charAt(i));
-                i++;
             }
         }
         return sb.toString();
