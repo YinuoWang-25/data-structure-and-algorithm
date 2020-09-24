@@ -1,9 +1,10 @@
-package todo;
+// 1145. Binary Tree Coloring Game
 
 import common.TreeNode;
 
-public class BinaryTreeColoringGame {
+public class L1145_BinaryTreeColoringGame {
     int left, right, val;
+
     public boolean btreeGameWinningMove(TreeNode root, int n, int x) {
         val = x;
         count(root);

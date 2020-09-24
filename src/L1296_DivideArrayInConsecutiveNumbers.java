@@ -1,25 +1,21 @@
-package todo;
+// 1296. Divide Array in Sets of K Consecutive Numbers
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class DivideArrayInConsecutiveNumbers {
+public class L1296_DivideArrayInConsecutiveNumbers {
     public boolean isPossibleDivide(int[] nums, int k) {
         Map<Integer, Integer> counter = new HashMap<>();
-        for (int num: nums) {
+        for (int num : nums) {
             counter.put(num, counter.getOrDefault(num, 0) + 1);
         }
         Arrays.sort(nums);
-        for (int num: nums) {
-            if (counter.get(num) == 0) {
-                continue;
-            }
+        for (int num : nums) {
+            if (counter.get(num) == 0) continue;
             int initial = counter.get(num);
-            for (int i = num ; i < num + k; i++) {
-                if (counter.getOrDefault(i, 0) < initial) {
-                    return false;
-                }
+            for (int i = num; i < num + k; i++) {
+                if (counter.getOrDefault(i, 0) < initial) return false;
                 counter.put(i, counter.get(i) - initial);
             }
         }
