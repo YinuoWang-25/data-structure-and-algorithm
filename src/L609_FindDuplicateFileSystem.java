@@ -1,4 +1,3 @@
-package todo;
 // 609. Find Duplicate File in System
 
 import java.util.*;
@@ -16,7 +15,7 @@ public class L609_FindDuplicateFileSystem {
                 int idx = strs[i].indexOf("(");
                 String content = strs[i].substring(idx);
                 String filename = strs[0] + "/" + strs[i].substring(0, idx);
-                Set<String> filenames = map.getOrDefault(content, new HashSet<String>());
+                Set<String> filenames = map.getOrDefault(content, new HashSet<>());
                 filenames.add(filename);
                 map.put(content, filenames);
             }
@@ -24,7 +23,7 @@ public class L609_FindDuplicateFileSystem {
 
         for (String key : map.keySet()) {
             if (map.get(key).size() > 1) {
-                result.add(new ArrayList<String>(map.get(key)));
+                result.add(new ArrayList<>(map.get(key)));
             }
         }
 
