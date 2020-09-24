@@ -550,6 +550,7 @@
 * [894. All Possible Full Binary Trees]()
 * [896. Monotonic Array]()
 * [900. RLE Iterator]()
+* [904. Fruit Into Baskets]()
 * [911. Online Election]()
 * [924. Minimize Malware Spread]()
 * [925. Long Pressed Name]()
