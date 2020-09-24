@@ -1,8 +1,8 @@
-package todo;
+// 1498. Number of Subsequences That Satisfy the Given Sum Condition
 
 import java.util.Arrays;
 
-public class SumCondition {
+public class L1498_SumCondition {
     public int numSubseq(int[] nums, int target) {
         int n = nums.length, left = 0, right = n - 1, mod = (int) (1e9 + 7);
         int res = 0;
