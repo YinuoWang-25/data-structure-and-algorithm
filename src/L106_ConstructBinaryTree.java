@@ -1,7 +1,8 @@
-package todo;
+// 106. Construct Binary Tree from Inorder and Postorder Traversal
 
-public class ConstructBinaryTreeFromInorderPostorderTraversal {
-    // 106. Construct Binary Tree from Inorder and Postorder Traversal
+import common.TreeNode;
+
+public class L106_ConstructBinaryTree {
     public TreeNode buildTree(int[] inorder, int[] postorder) {
         if (inorder.length != postorder.length) {
             return null;
@@ -16,7 +17,7 @@ public class ConstructBinaryTreeFromInorderPostorderTraversal {
         }
         TreeNode root = new TreeNode(postorder[postend]);
         int position = findPosition(inorder, instart, inend, postorder[postend]);
-        if (position == - 1) {
+        if (position == -1) {
             return null;
         }
         root.left = myBuildTree(inorder, instart, position - 1,
