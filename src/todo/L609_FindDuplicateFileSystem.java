@@ -1,9 +1,9 @@
 package todo;
+// 609. Find Duplicate File in System
 
 import java.util.*;
 
-public class FindDuplicateFileSystem {
-    // 609. Find Duplicate File in System
+public class L609_FindDuplicateFileSystem {
     public List<List<String>> findDuplicate(String[] paths) {
         List<List<String>> result = new ArrayList<List<String>>();
         int n = paths.length;
