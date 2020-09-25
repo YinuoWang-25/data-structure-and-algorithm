@@ -18,20 +18,11 @@ public class L220_ContainsDuplicateIII {
         Map<Integer, Integer> d = new HashMap<>();
         for (int i = 0; i < nums.length; ++i) {
             int m = getID(nums[i], t);
-            if (d.containsKey(m)) {
-                return true;
-            }
-            if (d.containsKey(m - 1) && Math.abs(nums[i] - d.get(m - 1)) < t) {
-                return true;
-            }
-            if (d.containsKey(m + 1) && Math.abs(nums[i] - d.get(m + 1)) < t) {
-
-                return true;
-            }
+            if (d.containsKey(m)) return true;
+            if (d.containsKey(m - 1) && Math.abs(nums[i] - d.get(m - 1)) < t) return true;
+            if (d.containsKey(m + 1) && Math.abs(nums[i] - d.get(m + 1)) < t) return true;
             d.put(m, nums[i]);
-            if (i >= k) {
-                d.remove(getID(nums[i - k], t));
-            }
+            if (i >= k) d.remove(getID(nums[i - k], t));
         }
         return false;
     }
