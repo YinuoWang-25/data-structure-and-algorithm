@@ -1,9 +1,8 @@
-package todo;
+// 549. Binary Tree Longest Consecutive Sequence II
 
 import common.TreeNode;
 
-public class BinaryTreeLongestConsecutiveSequenceII {
-    // 549. Binary Tree Longest Consecutive Sequence II
+public class L549_LongestConsecutiveSequenceII {
     int max = 0;
     public int longestConsecutive(TreeNode root) {
         dfs(root);
@@ -16,10 +15,8 @@ public class BinaryTreeLongestConsecutiveSequenceII {
         if (root == null) {
             return new int[]{0, 0};
         }
-        int[] lefts = dfs(root.left);
-        int[] rights = dfs(root.right);
-        int localInc = 1;
-        int localDec = 1;
+        int[] lefts = dfs(root.left), rights = dfs(root.right);
+        int localInc = 1, localDec = 1;
         if (root.left != null) {
             if ( root.val == root.left.val + 1) {
                 localInc += lefts[0];
