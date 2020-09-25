@@ -442,6 +442,7 @@
 * [611. Valid Triangle Number]()
 * [616. Add Bold Tag in String]()
 * [621. Task Scheduler]()
+* [622. Design Circular Queue]()
 * [630. Course Schedule III]()
 * [632. Smallest Range Covering Elements from K Lists]()
 * [637. Average of Levels in Binary Tree](https://github.com/YinuoWang-25/algorithms/blob/master/src/AverageOfLevels.java)
