@@ -1,7 +1,9 @@
-package todo;
+// 638. Shopping Offers
 
-public class ShoppingOffers {
-    // 638. Shopping Offers
+import java.util.ArrayList;
+import java.util.List;
+
+public class L638_ShoppingOffers {
     public int shoppingOffers(List<Integer> price, List<List<Integer>> special, List<Integer> needs) {
         return helper(price, special, needs, 0);
     }
@@ -10,10 +12,10 @@ public class ShoppingOffers {
         int local_min = directPurchase(price, needs);
         for (int i = pos; i < special.size(); i++) {
             List<Integer> offer = special.get(i);
-            List<Integer> temp = new ArrayList<Integer>();
-            for (int j= 0; j < needs.size(); j++) {
+            List<Integer> temp = new ArrayList<>();
+            for (int j = 0; j < needs.size(); j++) {
                 if (needs.get(j) < offer.get(j)) {
-                    temp =  null;
+                    temp = null;
                     break;
                 }
                 temp.add(needs.get(j) - offer.get(j));
@@ -23,8 +25,7 @@ public class ShoppingOffers {
                 local_min = Math.min(local_min, offer.get(offer.size() - 1) + helper(price, special, temp, i));
             }
         }
-
-        return  local_min;
+        return local_min;
     }
 
     private int directPurchase(List<Integer> price, List<Integer> needs) {
