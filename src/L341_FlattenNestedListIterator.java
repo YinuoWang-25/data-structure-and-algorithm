@@ -1,12 +1,15 @@
-package todo;
 // 341. Flatten Nested List Iterator
 
-public class FlattenNestedListIterator  implements Iterator<Integer> {
+import common.NestedInteger;
+
+import java.util.*;
+
+public class L341_FlattenNestedListIterator  implements Iterator<Integer> {
     Deque<NestedInteger> queue;
 
 
 
-    public NestedIterator(List<NestedInteger> nestedList) {
+    public L341_FlattenNestedListIterator(List<NestedInteger> nestedList) {
         queue = new LinkedList<>();
         for (NestedInteger num: nestedList) {
             queue.offerLast(num);
