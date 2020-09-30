@@ -1,7 +1,6 @@
-package todo;
+// 97. Interleaving String
 
-public class InterleavingString {
-    // 97. Interleaving String
+public class L97_InterleavingString {
     public boolean isInterleave(String s1, String s2, String s3) {
         if (s1.length() + s2.length() != s3.length()) {
             return false;
