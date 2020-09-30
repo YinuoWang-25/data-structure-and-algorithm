@@ -1,7 +1,8 @@
-package todo;
+// 462. Minimum Moves to Equal Array Elements II
 
-public class MinimumMovesEqualArrayElementsII {
-    // 462. Minimum Moves to Equal Array Elements II
+import java.util.Arrays;
+
+public class L462_MinimumMovesII {
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
         int middle = nums[nums.length / 2];

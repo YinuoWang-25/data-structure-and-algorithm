@@ -1,7 +1,8 @@
-package todo;
+// 490. The Maze
 
-public class TheMaze {
-    // 490. The Maze
+import java.util.*;
+
+public class L490_TheMaze {
     int[][] directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     public boolean hasPath(int[][] maze, int[] start, int[] dest) {
 
