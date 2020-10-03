@@ -1,9 +1,11 @@
-package todo;
+// 1032. Stream of Characters
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class StreamCharacters {
-    // 1032. Stream of Characters
+public class L1032_StreamCharacters {
     class TrieNode {
         String word;
         Map<Character, TrieNode> children;
@@ -13,9 +15,11 @@ public class StreamCharacters {
             this.children = new HashMap<>();
         }
     }
+
     TrieNode root;
     List<Character> chs;
-    public StreamCharacters(String[] words) {
+
+    public L1032_StreamCharacters(String[] words) {
         root = new TrieNode();
         chs = new ArrayList<>();
         for (String word : words) {

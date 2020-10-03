@@ -1,29 +1,17 @@
 // 159. Longest Substring with At Most Two Distinct Characters
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class L159_MostTwoDistinctCharacters {
     public int lengthOfLongestSubstringTwoDistinct(String s) {
-        if (s == null || s.length() == 0) {
-            return 0;
-        }
-        Map<Character, Integer> map = new HashMap<>();
-        int len = 0, left = 0, right = 0;
-        while (right < s.length()) {
-            char last = s.charAt(right);
-            map.put(last, map.getOrDefault(last, 0) + 1);
-            right++;
-            while (map.size() > 2) {
-                char first = s.charAt(left);
-                map.put(first, map.get(first) - 1);
-                if (map.get(first) == 0) {
-                    map.remove(first);
-                }
+        int[] count = new int[256];
+        int size = 0, left = 0, res = 0;
+        for (int right = 0; right < s.length(); right++) {
+            if (count[s.charAt(right)]++ == 0) size++;
+            while (size > 2) {
+                if (count[s.charAt(left)]-- == 1) size--;
                 left++;
             }
-            len = Math.max(right - left, len);
+            res = Math.max(res, right - left + 1);
         }
-        return len;
+        return res;
     }
 }

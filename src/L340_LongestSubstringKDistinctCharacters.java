@@ -6,30 +6,18 @@
         check whether is ans and add it
  */
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class L340_LongestSubstringKDistinctCharacters {
     public int lengthOfLongestSubstringKDistinct(String s, int k) {
-        Map<Character, Integer> hash = new HashMap<>();
-        int left = 0;
-        int right = 0;
-        int ans = 0;
-        while (right < s.length()) {
-            char r = s.charAt(right++);
-            hash.put(r, hash.getOrDefault(r, 0) + 1);
-            while (left < right && hash.size() > k) {
-                char l = s.charAt(left);
-                hash.put(l, hash.get(l) - 1);
-                if (hash.get(l) == 0) {
-                    hash.remove(l);
-                }
+        int[] count = new int[256];
+        int size = 0, left = 0, res = 0;
+        for (int right = 0; right < s.length(); right++) {
+            if (count[s.charAt(right)]++ == 0) size++;
+            while (size > k) {
+                if (count[s.charAt(left)]-- == 1) size--;
                 left++;
             }
-            if (hash.size() <= k) {
-                ans = Math.max(ans, right - left);
-            }
+            res = Math.max(res, right - left + 1);
         }
-        return ans;
+        return res;
     }
 }

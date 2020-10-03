@@ -2,25 +2,23 @@
 
 public class L76_MinimumWindowSubstring {
     public String minWindow(String s, String t) {
-        int[] map = new int[128];
-        for (char c : t.toCharArray()) map[c]++;
-        int start = 0, end = 0, minStart = 0, minLen = Integer.MAX_VALUE, counter = t.length();
-        while (end < s.length()) {
-            char c1 = s.charAt(end);
-            if (map[c1] > 0) counter--;
-            map[c1]--;
-            end++;
-            while (counter == 0) {
-                if (minLen > end - start) {
-                    minLen = end - start;
-                    minStart = start;
+        int[] hash = new int[256];
+        int left = 0, right = 0, start = -1, len = s.length() + 1, count = t.length();
+        for (char c : t.toCharArray()) hash[c]++;
+        while (right < s.length()) {
+            if (hash[s.charAt(right)] > 0) count--;
+            hash[s.charAt(right)]--;
+            right++;
+            while (count == 0) {
+                if (right - left < len) {
+                    len = right - left;
+                    start = left;
                 }
-                char c2 = s.charAt(start);
-                map[c2]++;
-                if (map[c2] > 0) counter++;
-                start++;
+                hash[s.charAt(left)]++;
+                if (hash[s.charAt(left)] > 0) count++;
+                left++;
             }
         }
-        return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
+        return start == -1 ? "" : s.substring(start, start + len);
     }
 }

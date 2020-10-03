@@ -32,7 +32,7 @@ public class L809_ExpressiveWords {
             // case 2: len(ss) >= 3 then check len(ss) > len(tt)
             if (ri - i >= 3 && ri - i < rj - j) return false;
 
-                // case 3: len(ss) < 3 then check len(ss) == len(tt)
+            // case 3: len(ss) < 3 then check len(ss) == len(tt)
             else if (ri - i < 3 && ri - i != rj - j) return false;
             i = ri;
             j = rj;

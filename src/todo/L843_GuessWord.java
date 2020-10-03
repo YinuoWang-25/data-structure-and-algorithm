@@ -1,11 +1,16 @@
 package todo;
 // 843. Guess the Word
+/*
+1. We select one word from list to guess and update list. But how to make a choice?
+
+If we guess a random word, the possibility to get 0 matched is:(25/26) ^ 6 = 79.03%
+
+
+
+ */
 
 import java.util.*;
 
-interface  Master {
-    public int guess(String s);
-}
 public class L843_GuessWord {
     public void findSecretWord(String[] wordlist, Master master) {
         for (int times = 0, match = 0; times < 10 && match < 6; times++) {
@@ -51,4 +56,8 @@ public class L843_GuessWord {
         }
         return match;
     }
+}
+
+interface  Master {
+    public int guess(String s);
 }
