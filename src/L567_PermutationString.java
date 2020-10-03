@@ -2,29 +2,25 @@
 
 public class L567_PermutationString {
     public boolean checkInclusion(String s1, String s2) {
-        int len1 = s1.length(), len2 = s2.length();
-        if (len1 > len2) return false;
-
-        int[] count = new int[26];
-        for (int i = 0; i < len1; i++) {
-            count[s1.charAt(i) - 'a']++;
-            count[s2.charAt(i) - 'a']--;
+        if (s1.length() > s2.length()) return false;
+        char[] hash = new char[26];
+        for (char c : s1.toCharArray()) {
+            hash[c - 'a']++;
         }
-        if (allZero(count)) return true;
-
-        for (int i = len1; i < len2; i++) {
-            count[s2.charAt(i) - 'a']--;
-            count[s2.charAt(i - len1) - 'a']++;
-            if (allZero(count)) return true;
+        int count = s1.length(), left = 0, right = 0;
+        while (right < s2.length()) {
+            char r = s2.charAt(right);
+            if (hash[r - 'a'] > 0) count--;
+            hash[r - 'a']--;
+            right++;
+            if (right - left > s1.length()) {
+                char l = s2.charAt(left);
+                hash[l - 'a']++;
+                if (hash[l - 'a'] > 0) count++;
+                left++;
+            }
+            if (count == 0) return true;
         }
-
         return false;
-    }
-
-    private boolean allZero(int[] count) {
-        for (int i = 0; i < 26; i++) {
-            if (count[i] != 0) return false;
-        }
-        return true;
     }
 }
