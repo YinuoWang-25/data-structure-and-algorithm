@@ -10,37 +10,28 @@ Keep in mind that the size of two heap can not larger than 1
 import java.util.PriorityQueue;
 
 public class L295_FindMedianDataStream {
-    PriorityQueue<Integer> maxHeap; // first part
-    PriorityQueue<Integer> minHeap;// second part
+    PriorityQueue<Integer> first = new PriorityQueue<>((a, b) -> (b - a));
+    PriorityQueue<Integer> second = new PriorityQueue<>();
 
     /**
      * initialize your data structure here.
      */
     public L295_FindMedianDataStream() {
-        maxHeap = new PriorityQueue<>((a, b) -> (b - a));
-        minHeap = new PriorityQueue<>();
+
     }
 
     public void addNum(int num) {
-        if (maxHeap.isEmpty() || num <= maxHeap.peek()) {
-            maxHeap.offer(num);
-            if (maxHeap.size() - 1 > minHeap.size()) {
-                minHeap.offer(maxHeap.poll());
-            }
-        } else {
-            minHeap.offer(num);
-            if (minHeap.size() > maxHeap.size()) {
-                maxHeap.offer(minHeap.poll());
-            }
-        }
+        first.add(num);
+        second.add(first.poll());
+        if (second.size() > first.size()) first.add(second.poll());
     }
 
     public double findMedian() {
-        int size = maxHeap.size() + minHeap.size();
+        int size = first.size() + second.size();
         if (size % 2 == 0) {
-            return (double) (maxHeap.peek() + minHeap.peek()) / 2;
+            return (double) (first.peek() + second.peek()) / 2;
         } else {
-            return maxHeap.peek();
+            return first.peek();
         }
     }
 }
