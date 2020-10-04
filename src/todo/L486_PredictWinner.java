@@ -1,7 +1,7 @@
 package todo;
+// 486. Predict the Winner
 
-public class PredictWinner {
-    // 486. Predict the Winner
+public class L486_PredictWinner {
     public boolean PredictTheWinner(int[] nums) {
         int[][] dp = new int[nums.length][nums.length];
         for (int i = 0; i < nums.length; i++) {
