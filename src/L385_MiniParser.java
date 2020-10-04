@@ -7,36 +7,32 @@ import java.util.LinkedList;
 
 public class L385_MiniParser {
     public NestedInteger deserialize(String s) {
-        if (s.isEmpty()) return null;
+        NestedInteger res = null;
+        if (s.length() == 0) return res;
         if (s.charAt(0) != '[') return new NestedInteger(Integer.parseInt(s));
-
         Deque<NestedInteger> stack = new LinkedList<>();
-        NestedInteger curr = null;
-        int l = 0;
-        for (int r = 0; r < s.length(); r++) {
-            char ch = s.charAt(r);
-            if (ch == '[') {
-                if (curr != null) stack.push(curr);
-                curr = new NestedInteger();
-                l = r + 1;
-            } else if (ch == ']') {
-                String num = s.substring(l, r);
-                if (!num.isEmpty())
-                    curr.add(new NestedInteger(Integer.parseInt(num)));
+        int index = 0;
+        while (index < s.length()) {
+            char c = s.charAt(index);
+            if (c == '[') {
+                if (res != null) stack.offerFirst(res);
+                res = new NestedInteger();
+            } else if (c == ']') {
                 if (!stack.isEmpty()) {
-                    NestedInteger pop = stack.pollFirst();
-                    pop.add(curr);
-                    curr = pop;
+                    NestedInteger pre = stack.pollFirst();
+                    pre.add(res);
+                    res = pre;
                 }
-                l = r + 1;
-            } else if (ch == ',') {
-                if (s.charAt(r - 1) != ']') {
-                    String num = s.substring(l, r);
-                    curr.add(new NestedInteger(Integer.parseInt(num)));
-                }
-                l = r + 1;
+            } else if (Character.isDigit(c) || c == '-') {
+                int last = index;
+                if (c == '-') last++;
+                while (last < s.length() && Character.isDigit(s.charAt(last))) last++;
+                int num = c == '-' ? -Integer.valueOf(s.substring(index + 1, last)) : Integer.valueOf(s.substring(index, last));
+                res.add(new NestedInteger(num));
+                index = last - 1;
             }
+            index++;
         }
-        return curr;
+        return res;
     }
 }
