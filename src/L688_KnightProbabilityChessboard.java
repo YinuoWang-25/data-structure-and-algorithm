@@ -1,7 +1,6 @@
-package todo;
+// 688. Knight Probability in Chessboard
 
-public class KnightProbabilityChessboard {
-    // 688. Knight Probability in Chessboard
+public class L688_KnightProbabilityChessboard {
     public double knightProbability(int N, int K, int r, int c) {
         int[][] dir = {{-1, -2}, {1, -2}, {2, -1}, {2, 1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}};
         double[][] dp = new double[N][N];
