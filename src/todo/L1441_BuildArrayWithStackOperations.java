@@ -1,20 +1,22 @@
 package todo;
+// 1441. Build an Array With Stack Operations
+/*
+Two pointers
+ */
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ArrayWithStackOperations {
+public class L1441_BuildArrayWithStackOperations {
     public List<String> buildArray(int[] target, int n) {
         List<String> res = new ArrayList<>();
         int index = 1;
-        for (int i = 0 ; i < target.length; i++) {
-            while (target[i] > index) {
+        for (int j : target) {
+            while (j > index) {
                 res.add("Push");
-                // pop
                 res.add("Pop");
                 index++;
             }
-
             res.add("Push");
             index++;
         }
