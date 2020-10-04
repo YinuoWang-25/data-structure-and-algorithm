@@ -2,9 +2,7 @@
 
 public class L227_BasicCalculatorII {
     public int calculate(String s) {
-        int sum = 0;
-        int tempSum = 0;
-        int num = 0;
+        int sum = 0, tempSum = 0, num = 0;
         char lastSign = '+';
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);

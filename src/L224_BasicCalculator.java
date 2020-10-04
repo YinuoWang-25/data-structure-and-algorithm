@@ -1,4 +1,7 @@
 // 224. Basic Calculator
+/*
+Assumption: input s is valid
+ */
 
 import java.util.Deque;
 import java.util.LinkedList;
