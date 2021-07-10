@@ -3,27 +3,30 @@
 import common.TreeNode;
 
 public class L333_LargestBSTSubtree {
-    int max = 0;
 
     public int largestBSTSubtree(TreeNode root) {
-        if (root == null) {
-            return 0;
-        }
-        traverse(root);
-        return max;
+        int[] res = new int[1];
+
+        traverse(res, root);
+
+        return res[0];
     }
 
-    private Result traverse(TreeNode root) {
+    private Result traverse(int[] res, TreeNode root) {
         if (root == null) {
             return new Result(0, Integer.MAX_VALUE, Integer.MIN_VALUE);
         }
-        Result left = traverse(root.left);
-        Result right = traverse(root.right);
+
+        Result left = traverse(res, root.left), right = traverse(res, root.right);
+
         if (left.size == -1 || right.size == -1 || root.val <= left.upper || root.val >= right.lower) {
             return new Result(-1, 0, 0);
         }
+
         int size = left.size + 1 + right.size;
-        max = Math.max(size, max);
+
+        res[0] = Math.max(size, res[0]);
+
         return new Result(size, Math.min(left.lower, root.val), Math.max(right.upper, root.val));
     }
 
