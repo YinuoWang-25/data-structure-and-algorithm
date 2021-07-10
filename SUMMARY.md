@@ -4,15 +4,15 @@
 
 ## Base Data Structure
 
-* [Module 1 LinkedList to Graph](base-data-structure/chapter-1-linkedlist-to-graph/README.md)
-  * [1.1 LinkedList](base-data-structure/chapter-1-linkedlist-to-graph/linkedlist.md)
-  * [1.2 Tree](base-data-structure/chapter-1-linkedlist-to-graph/tree.md)
-  * [1.3 Graph](base-data-structure/chapter-1-linkedlist-to-graph/graph.md)
+* [Module 1 LinkedList to Graph](base-data-structure/module-1-linkedlist-to-graph/README.md)
+  * [1.1 LinkedList](base-data-structure/module-1-linkedlist-to-graph/1.1-linkedlist.md)
+  * [1.2 Tree](base-data-structure/module-1-linkedlist-to-graph/1.2-tree.md)
+  * [1.3 Graph](base-data-structure/module-1-linkedlist-to-graph/1.3-graph.md)
 * [Module 2 Stack and Queue](base-data-structure/module-2-stack-and-queue/README.md)
-  * [2.1 Queue](base-data-structure/module-2-stack-and-queue/queue.md)
-  * [2.2 Stack](base-data-structure/module-2-stack-and-queue/stack.md)
-* [Module 3 PriorityQueue](base-data-structure/priorityqueue.md)
-* [Module 4 HashTable](base-data-structure/hashtable.md)
+  * [2.1 Queue](base-data-structure/module-2-stack-and-queue/2.1-queue.md)
+  * [2.2 Stack](base-data-structure/module-2-stack-and-queue/2.2-stack.md)
+* [Module 3 PriorityQueue](base-data-structure/module-3-priorityqueue.md)
+* [Module 4 HashTable](base-data-structure/module-4-hashtable.md)
 * [Module 5 Advanced Data Structure](base-data-structure/module-5-advanced-data-structure/README.md)
   * [5.1 Trie](base-data-structure/module-5-advanced-data-structure/5.1-trie.md)
   * [5.2 Union Find](base-data-structure/module-5-advanced-data-structure/5.2-union-find.md)
