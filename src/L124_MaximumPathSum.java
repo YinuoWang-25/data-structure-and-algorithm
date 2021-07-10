@@ -12,20 +12,29 @@ import common.TreeNode;
 public class L124_MaximumPathSum {
 
     public int maxPathSum(TreeNode root) {
-        if (root == null) return 0;
+        if (root == null) {
+            return 0;
+        }
+
         int[] res = new int[1];
         res[0] = Integer.MIN_VALUE;
+
         dfs(root, res);
+
         return res[0];
     }
 
     private int dfs(TreeNode root, int[] res) {
-        if (root == null) return 0;
-        int l = dfs(root.left, res);
-        int r = dfs(root.right, res);
-        int cur = root.val;
-        int global = Math.max(0, l) + Math.max(0, r) + root.val;
+        if (root == null) {
+            return 0;
+        }
+
+        int l = Math.max(0, dfs(root.left, res));
+        int r = Math.max(0, dfs(root.right, res));
+
+        int global = l + r + root.val;
         res[0] = Math.max(global, res[0]);
-        return Math.max(Math.max(0, l), Math.max(0, r)) + cur;
+
+        return Math.max(l, r) + root.val;
     }
 }
