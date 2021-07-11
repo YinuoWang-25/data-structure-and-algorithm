@@ -4,18 +4,36 @@ import common.TreeNode;
 
 public class L687_LongestUnivaluePath {
     public int longestUnivaluePath(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
         int[] res = new int[1];
-        if (root != null) dfs(root, res);
+        dfs(res, root);
+
         return res[0];
     }
 
-    private int dfs(TreeNode node, int[] res) {
-        if (node == null) return 0;
-        int l = dfs(node.left, res);
-        int r = dfs(node.right, res);
-        int resl = node.left != null && node.left.val == node.val ? l + 1 : 0;
-        int resr = node.right != null && node.right.val == node.val ? r + 1 : 0;
-        res[0] = Math.max(res[0], resl + resr);
-        return Math.max(resl, resr);
+    private int dfs(int[] res, TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+
+        int left = dfs(res, root.left);
+        int right = dfs(res, root.right);
+
+        int cur = 1, l = 0, r = 0;
+
+        if (root.left != null && root.left.val == root.val) {
+            l = left;
+        }
+
+        if (root.right != null && root.right.val == root.val) {
+            r = right;
+        }
+
+        res[0] = Math.max(res[0], cur + l + r);
+
+        return cur + Math.max(l, r);
     }
 }
