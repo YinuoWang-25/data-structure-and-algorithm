@@ -13,13 +13,14 @@ public class L173_BinarySearchTreeIterator {
         pushAll(root);
     }
 
-    /**
-     * @return the next smallest number
-     */
     public int next() {
         TreeNode cur = stack.pollFirst();
         pushAll(cur.right);
         return cur.val;
+    }
+
+    public boolean hasNext() {
+        return !stack.isEmpty();
     }
 
     private void pushAll(TreeNode root) {
@@ -27,12 +28,5 @@ public class L173_BinarySearchTreeIterator {
             stack.offerFirst(root);
             root = root.left;
         }
-    }
-
-    /**
-     * @return whether we have a next smallest number
-     */
-    public boolean hasNext() {
-        return !stack.isEmpty();
     }
 }
