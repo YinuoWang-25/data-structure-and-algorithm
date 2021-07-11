@@ -4,13 +4,13 @@ package todo;
 import java.util.Map;
 
 public class L146_LRUCache {
-    class Node<K,V> {
-        Node<Integer,Integer> next;
-        Node<Integer,Integer> prev;
+    class Node<K, V> {
+        Node<Integer, Integer> next;
+        Node<Integer, Integer> prev;
         Integer key;
         Integer value;
 
-        Node (Integer key, Integer value) {
+        Node(Integer key, Integer value) {
             this.key = key;
             this.value = value;
         }

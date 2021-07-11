@@ -11,8 +11,11 @@ public class L98_ValidateBinarySearchTree {
         if (root == null) {
             return true;
         }
+
         if (left != null && left.val >= root.val) return false;
+
         if (right != null && right.val <= root.val) return false;
+
         return isValid(root.left, left, root) && isValid(root.right, root, right);
 
     }

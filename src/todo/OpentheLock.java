@@ -6,7 +6,7 @@ public class OpentheLock {
         Set<String> ds = new HashSet<>();
         Set<String> visited = new HashSet<>();
         visited.add("0000");
-        for (String s: deadends) {
+        for (String s : deadends) {
             ds.add(s);
         }
         if (ds.contains("0000")) {
@@ -24,7 +24,7 @@ public class OpentheLock {
                 } else {
                     List<String> nexts = new ArrayList<>();
                     getNexts(nexts, cur, new StringBuilder(), ds, visited, 0, false);
-                    for (String next: nexts) {
+                    for (String next : nexts) {
                         q.offer(next);
                     }
                 }
@@ -44,8 +44,8 @@ public class OpentheLock {
             return;
         }
         char tmp = origin.charAt(index);
-        char prev = tmp == '0'? '9' : (char)( (tmp - '0' - 1) + '0');
-        char next = tmp == '9'? '0' : (char)( (tmp - '0' + 1) + '0');
+        char prev = tmp == '0' ? '9' : (char) ((tmp - '0' - 1) + '0');
+        char next = tmp == '9' ? '0' : (char) ((tmp - '0' + 1) + '0');
         if (changed) {
             sb.append(tmp);
             getNexts(ans, origin, sb, ds, visited, index + 1, changed);

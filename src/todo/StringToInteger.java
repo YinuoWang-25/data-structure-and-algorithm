@@ -3,7 +3,7 @@ package todo;
 public class StringToInteger {
     // 8. String to Integer (atoi)
     public int myAtoi(String str) {
-        if(str == null) {
+        if (str == null) {
             return 0;
         }
         str = str.trim();
@@ -25,7 +25,7 @@ public class StringToInteger {
             if (str.charAt(index) < '0' || str.charAt(index) > '9')
                 break;
             num = num * 10 + (str.charAt(index) - '0');
-            if (num > Integer.MAX_VALUE ) {
+            if (num > Integer.MAX_VALUE) {
                 break;
             }
         }
@@ -35,6 +35,6 @@ public class StringToInteger {
         if (num * sign <= Integer.MIN_VALUE) {
             return Integer.MIN_VALUE;
         }
-        return (int)num * sign;
+        return (int) num * sign;
     }
 }

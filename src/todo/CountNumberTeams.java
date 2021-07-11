@@ -9,7 +9,7 @@ public class CountNumberTeams {
         int[][] desc = new int[rating.length][3];
         asc[0][0] = 1;
         desc[0][0] = 1;
-        for (int i = 1 ; i < rating.length; i++) {
+        for (int i = 1; i < rating.length; i++) {
             asc[i][0] = 1;
             desc[i][0] = 1;
             for (int j = 0; j < i; j++) {
@@ -23,7 +23,7 @@ public class CountNumberTeams {
             }
         }
         int ans = 0;
-        for (int i = 0 ; i < rating.length; i++) {
+        for (int i = 0; i < rating.length; i++) {
             ans += asc[i][2];
             ans += desc[i][2];
         }

@@ -34,7 +34,7 @@ public class FavoriteCompanies {
         if (a.size() > b.size()) return false;
         Set<String> set1 = new HashSet<>(a);
         Set<String> set2 = new HashSet<>(b);
-        for (String s: set1) {
+        for (String s : set1) {
             if (!set2.contains(s)) return false;
         }
         return true;

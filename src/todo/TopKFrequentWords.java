@@ -10,15 +10,15 @@ public class TopKFrequentWords {
         }
 
         PriorityQueue<Map.Entry<String, Integer>> pq = new PriorityQueue<>(
-                (a,b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue() - b.getValue()
+                (a, b) -> a.getValue() == b.getValue() ? b.getKey().compareTo(a.getKey()) : a.getValue() - b.getValue()
         );
 
-        for (Map.Entry<String, Integer> entry: map.entrySet()) {
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
             pq.offer(entry);
             if (pq.size() > k) pq.poll();
         }
 
-        while(!pq.isEmpty())
+        while (!pq.isEmpty())
             result.add(0, pq.poll().getKey());
 
         return result;

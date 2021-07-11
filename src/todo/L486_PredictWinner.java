@@ -11,7 +11,7 @@ public class L486_PredictWinner {
             for (int s = 0; s < nums.length - len + 1; s++) {
                 int e = s + len - 1;
                 // if take i: dp[i + 1][j] player 2 get
-                dp[s][e] = Math.max(  nums[s] - dp[s + 1][e], nums[e] - dp[s][e - 1]);
+                dp[s][e] = Math.max(nums[s] - dp[s + 1][e], nums[e] - dp[s][e - 1]);
             }
         }
         return dp[0][nums.length - 1] >= 0;

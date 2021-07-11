@@ -4,10 +4,11 @@ import java.util.Arrays;
 
 public class StoneGameII {
     public int stoneGameII(int[] piles) {
-        int[] presum =  Arrays.copyOf(piles, piles.length);
+        int[] presum = Arrays.copyOf(piles, piles.length);
         for (int i = presum.length - 2; i >= 0; i--) presum[i] += presum[i + 1];
         return dfs(presum, 1, 0, new int[piles.length][piles.length]);
     }
+
     private int dfs(int[] presum, int m, int p, int[][] memo) {
         if (p + 2 * m >= presum.length) { // last player takes all
             return presum[p];

@@ -4,15 +4,15 @@ public class ScrambleString {
     // 87. Scramble String
     public boolean isScramble(String s1, String s2) {
         int size = s1.length();
-        if(s1.length() != s2.length()){
+        if (s1.length() != s2.length()) {
             return false;
         }
         // edge case: diff char set
-        char [] sortS1 = s1.toCharArray();
+        char[] sortS1 = s1.toCharArray();
         Arrays.sort(sortS1);
-        char [] sortS2 = s2.toCharArray();
+        char[] sortS2 = s2.toCharArray();
         Arrays.sort(sortS2);
-        if(!Arrays.equals(sortS1,sortS2)){
+        if (!Arrays.equals(sortS1, sortS2)) {
             return false;
         }
 

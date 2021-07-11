@@ -26,7 +26,7 @@ public class CrackingtheSafe {
         String lastDigits = pwd.substring(pwd.length() - n + 1); // Last n-1 digits of pwd.
         for (char ch = '0'; ch < '0' + k; ch++) {
             String newComb = lastDigits + ch;
-            if (!visitedComb.contains(newComb))  {
+            if (!visitedComb.contains(newComb)) {
                 visitedComb.add(newComb);
                 pwd.append(ch);
                 if (crackSafeAfter(pwd, visitedComb, targetNumVisited, n, k)) {

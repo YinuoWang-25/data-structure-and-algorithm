@@ -10,7 +10,8 @@ public class PaintHouseII {
 
         for (int i = 0; i < n; i++) {
             int last1 = min1, last2 = min2;
-            min1 = -1; min2 = -1;
+            min1 = -1;
+            min2 = -1;
             for (int j = 0; j < k; j++) {
                 if (j != last1) {
                     // current color j is different to last min1
@@ -21,7 +22,8 @@ public class PaintHouseII {
 
                 // find the indices of 1st and 2nd smallest cost of painting current house i
                 if (min1 < 0 || costs[i][j] < costs[i][min1]) {
-                    min2 = min1; min1 = j;
+                    min2 = min1;
+                    min1 = j;
                 } else if (min2 < 0 || costs[i][j] < costs[i][min2]) {
                     min2 = j;
                 }

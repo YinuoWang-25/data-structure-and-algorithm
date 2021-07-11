@@ -8,7 +8,7 @@ public class SplitBST {
         if (root == null) return new TreeNode[]{null, null};
 
         TreeNode[] splitted;
-        if (root.val <=  V) {
+        if (root.val <= V) {
             splitted = splitBST(root.right, V);
             root.right = splitted[0];
             splitted[0] = root;

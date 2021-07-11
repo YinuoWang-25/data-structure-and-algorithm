@@ -1,6 +1,8 @@
 package todo;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class SlidingPuzzle {
     // 773. Sliding Puzzle
@@ -13,8 +15,8 @@ public class SlidingPuzzle {
             }
         }
         HashSet<String> visited = new HashSet<>();
-        int[][] dirs = new int[][] { { 1, 3 }, { 0, 2, 4 },
-                { 1, 5 }, { 0, 4 }, { 1, 3, 5 }, { 2, 4 } };
+        int[][] dirs = new int[][]{{1, 3}, {0, 2, 4},
+                {1, 5}, {0, 4}, {1, 3, 5}, {2, 4}};
         Queue<String> queue = new LinkedList<>();
         queue.offer(start);
         visited.add(start);

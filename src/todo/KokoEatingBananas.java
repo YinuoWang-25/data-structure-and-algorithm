@@ -8,7 +8,7 @@ public class KokoEatingBananas {
         while (lo < hi) {
             int K = lo + ((hi - lo) >> 1);
             if (canEatAll(piles, K, H)) {
-                hi = K ;
+                hi = K;
             } else {
                 lo = K + 1;
             }

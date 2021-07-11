@@ -16,10 +16,10 @@ public class NextClosestTime {
 
         for (int i = originalTime.length() - 1; i >= 0; i--) {
             if (originalTime.charAt(i) != ':' && hasLargerDigit(chs, originalTime.charAt(i))) {
-                String nextTime = buildNextTime(originalTime, i,chs);
+                String nextTime = buildNextTime(originalTime, i, chs);
                 char[] nextTimeChs = nextTime.toCharArray();
                 for (int start = i + 1; start < originalTime.length(); start++) {
-                    if ( nextTimeChs[start] != ':')
+                    if (nextTimeChs[start] != ':')
                         nextTimeChs[start] = chs.get(0);
                 }
                 nextTime = new String(nextTimeChs);
@@ -46,7 +46,7 @@ public class NextClosestTime {
             }
         }
         char nextChar = chs.get(idx);
-        return originalTime.substring(0, index) + nextChar + originalTime.substring( index + 1);
+        return originalTime.substring(0, index) + nextChar + originalTime.substring(index + 1);
 
     }
 
@@ -58,9 +58,6 @@ public class NextClosestTime {
         }
         String min = time.substring(3);
         Integer minInInt = Integer.parseInt(min);
-        if (minInInt < 0 || minInInt > 59) {
-            return false;
-        }
-        return true;
+        return minInInt >= 0 && minInInt <= 59;
     }
 }

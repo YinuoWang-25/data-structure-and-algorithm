@@ -9,7 +9,8 @@ If we guess a random word, the possibility to get 0 matched is:(25/26) ^ 6 = 79.
 
  */
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class L843_GuessWord {
     public void findSecretWord(String[] wordlist, Master master) {
@@ -49,7 +50,7 @@ public class L843_GuessWord {
 
     private int getMatch(String a, String b) {
         int match = 0;
-        for (int i = 0 ; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             if (a.charAt(i) == b.charAt(i)) {
                 match++;
             }
@@ -58,6 +59,6 @@ public class L843_GuessWord {
     }
 }
 
-interface  Master {
-    public int guess(String s);
+interface Master {
+    int guess(String s);
 }

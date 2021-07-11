@@ -12,7 +12,7 @@ public class Minesweeper {
         if (board[x][y] == 'M') {
             board[x][y] = 'X';
         } else if (count > 0) {
-            board[x][y] = (char)('0' + count);
+            board[x][y] = (char) ('0' + count);
         } else {
             board[x][y] = 'B';
             for (int i = -1; i < 2; i++) {

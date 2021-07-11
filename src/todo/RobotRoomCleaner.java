@@ -2,7 +2,7 @@ package todo;
 
 public class RobotRoomCleaner {
     // 489. Robot Room Cleaner
-    int[][] dir = {{1,0}, {0,1}, {-1,0}, {0, -1}};
+    int[][] dir = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
     public void cleanRoom(Robot robot) {
         Set<String> visited = new HashSet<>();
@@ -36,15 +36,17 @@ public class RobotRoomCleaner {
 }
 
 
- interface Robot {
-     // Returns true if the cell in front is open and robot moves into the cell.
-          // Returns false if the cell in front is blocked and robot stays in the current cell.
-          public boolean move();
-              // Robot will stay in the same cell after calling turnLeft/turnRight.
-              // Each turn will be 90 degrees.
-              public void turnLeft();
-  public void turnRight();
+interface Robot {
+    // Returns true if the cell in front is open and robot moves into the cell.
+    // Returns false if the cell in front is blocked and robot stays in the current cell.
+    boolean move();
 
-          // Clean the current cell.
-              public void clean();
- }
+    // Robot will stay in the same cell after calling turnLeft/turnRight.
+    // Each turn will be 90 degrees.
+    void turnLeft();
+
+    void turnRight();
+
+    // Clean the current cell.
+    void clean();
+}

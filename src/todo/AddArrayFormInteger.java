@@ -12,7 +12,7 @@ public class AddArrayFormInteger {
         int index = A.length - 1;
         while (K > 0) {
             int cur = K % 10;
-            int sum = cur + (index < 0 ? 0 : A[index])+ plus;
+            int sum = cur + (index < 0 ? 0 : A[index]) + plus;
             res.add(sum % 10);
             plus = sum / 10;
             K /= 10;

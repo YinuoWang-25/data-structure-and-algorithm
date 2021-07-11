@@ -6,7 +6,7 @@ public class HIndex {
         int len = citations.length;
         int[] count = new int[len + 1];
 
-        for (int c: citations) {
+        for (int c : citations) {
             if (c > len) {
                 count[len]++;
             } else {
